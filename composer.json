@@ -25,7 +25,8 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "Marvelous\\": "app/",
+            "Programadoramauri\\Marvelapi\\": "packages/programadoramauri/marvelapi/src"
         }
     },
     "autoload-dev": {

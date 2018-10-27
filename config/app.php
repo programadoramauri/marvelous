@@ -154,11 +154,13 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Marvelous\Providers\AppServiceProvider::class,
+        Marvelous\Providers\AuthServiceProvider::class,
+        // Marvelous\Providers\BroadcastServiceProvider::class,
+        Marvelous\Providers\EventServiceProvider::class,
+        Marvelous\Providers\RouteServiceProvider::class,
+
+        Programadoramauri\Marvelapi\MarvelapiServiceProvider::class,
 
     ],
 

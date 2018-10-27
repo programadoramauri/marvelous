@@ -1,13 +1,13 @@
 <?php
 
-namespace Marvelous\Providers;
+namespace Programadoramauri\Marvelapi;
 
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class MarvelapiServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */

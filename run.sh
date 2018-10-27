@@ -16,4 +16,4 @@ echo Containers info
 docker ps -a
 
 echo Starting the engine
-docker exec -it marvelous-app php artisan serve
+docker exec -d marvelous-app php artisan serve

@@ -1,0 +1,15 @@
+{
+    "name": "programadoramauri/marvelapi",
+    "description": "A simple Marvel's Api reader",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amauri Franco",
+            "email": "programador.amauri@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle":"~6.0"
+    }
+}
