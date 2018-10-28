@@ -3,7 +3,7 @@
 namespace Programadoramauri\Marvelapi;
 
 use Carbon\Carbon;
-use Programadoramauri\Marvelapi\Request\QueryCharactersRequest;
+use Programadoramauri\Marvelapi\Models\Request\QueryCharactersRequest;
 
 class MarvelApi
 {
@@ -15,16 +15,22 @@ class MarvelApi
         $this->privateKey = env('MARVEL_PRIVATE_KEY', null);
         $this->timestamp = Carbon::now()->timestamp;
 
-        $this->hash = md5($this->timestamp.$this->privateKey.$this->publicKey);
+        $this->hash = md5($this->timestamp . $this->privateKey . $this->publicKey);
 
         $this->auth = [
             'apikey' => env('MARVEL_PUBLIC_KEY', $publicKey),
             'ts' => Carbon::now()->timestamp,
-            'hash' => md5($this->timestamp.$this->privateKey.$this->publicKey),
+            'hash' => md5($this->timestamp . $this->privateKey . $this->publicKey),
         ];
 
-        if(is_null($this->publicKey)) throw new \Exception('Public key can\' be null');
-        if(is_null($this->privateKey)) throw new \Exception('Private key can\'t be null');
+        if (is_null($this->publicKey)) {
+            throw new \Exception('Public key can\' be null');
+        }
+
+        if (is_null($this->privateKey)) {
+            throw new \Exception('Private key can\'t be null');
+        }
+
     }
 
     public function getCharacters($id = null, $type = null)

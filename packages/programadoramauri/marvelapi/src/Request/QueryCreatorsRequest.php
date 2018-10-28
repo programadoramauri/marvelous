@@ -1,12 +1,6 @@
 <?php
 
-namespace Programadoramauri\Marvelapi\Request;
-
-/**
- * Class QueryCreatorsRequest
- *
- * @package Programadoramauri\Marvelapi\Request
- */
+namespace Programadoramauri\Marvelapi\Models\Request;
 
 class QueryCreatorsRequest extends AbstractRequest
 {
@@ -19,8 +13,14 @@ class QueryCreatorsRequest extends AbstractRequest
     public function execute($id = null, $type = null)
     {
         $url = 'https://gateway.marvel.com/v1/public/creators';
-        if(!is_null($id)) $url.='/'.$id;
-        if(!is_null($type)) $url.='/'.$type;
+        if (!is_null($id)) {
+            $url .= '/' . $id;
+        }
+
+        if (!is_null($type)) {
+            $url .= '/' . $type;
+        }
+
         return $this->sendRequest('GET', $url);
     }
 }

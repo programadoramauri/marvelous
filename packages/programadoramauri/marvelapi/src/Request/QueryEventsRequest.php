@@ -1,12 +1,6 @@
 <?php
 
-namespace Programadoramauri\Marvelapi\Request;
-
-/**
- * Class QueryEventsRequest
- *
- * @package Programadoramauri\Marvelapi\Request
- */
+namespace Programadoramauri\Marvelapi\Models\Request;
 
 class QueryEventsRequest extends AbstractRequest
 {
@@ -19,8 +13,14 @@ class QueryEventsRequest extends AbstractRequest
     public function execute($id = null, $type = null)
     {
         $url = 'https://gateway.marvel.com/v1/public/events';
-        if(!is_null($id)) $url.='/'.$id;
-        if(!is_null($type)) $url.='/'.$type;
+        if (!is_null($id)) {
+            $url .= '/' . $id;
+        }
+
+        if (!is_null($type)) {
+            $url .= '/' . $type;
+        }
+
         return $this->sendRequest('GET', $url);
     }
 }

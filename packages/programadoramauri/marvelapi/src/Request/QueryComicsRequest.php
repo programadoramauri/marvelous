@@ -1,12 +1,6 @@
 <?php
 
-namespace Programadoramauri\Marvelapi\Request;
-
-/**
- * Class QueryComicsRequest
- *
- * @package Programadoramauri\Marvelapi\Request
- */
+namespace Programadoramauri\Marvelapi\Models\Request;
 
 class QueryComicsRequest extends AbstractRequest
 {
@@ -19,8 +13,14 @@ class QueryComicsRequest extends AbstractRequest
     public function execute($id = null, $type = null)
     {
         $url = 'https://gateway.marvel.com/v1/public/comics';
-        if(!is_null($id)) $url.='/'.$id;
-        if(!is_null($type)) $url.='/'.$type;
+        if (!is_null($id)) {
+            $url .= '/' . $id;
+        }
+
+        if (!is_null($type)) {
+            $url .= '/' . $type;
+        }
+
         return $this->sendRequest('GET', $url);
     }
 }
