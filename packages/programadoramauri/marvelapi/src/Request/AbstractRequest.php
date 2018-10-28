@@ -14,6 +14,7 @@ use \GuzzleHttp\Client;
  {
 
     private $auth;
+    protected $url;
 
     public function __construct($auth)
     {

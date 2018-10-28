@@ -35,31 +35,31 @@ class MarvelApi
 
     public function getComics($id = null, $type = null)
     {
-        $queryGetComics = new QueryComics($this->auth);
+        $queryGetComics = new QueryComicsRequest($this->auth);
         return $queryGetComics->execute($id, $type);
     }
 
     public function getCreators($id = null, $type = null)
     {
-        $queryGetCreators = new QueryCreators($this->auth);
+        $queryGetCreators = new QueryCreatorsRequest($this->auth);
         return $queryGetCreators->execute($id, $type);
     }
 
     public function getEvents($id = null, $type = null)
     {
-        $queryGetEvents = new QueryEvents($this->auth);
+        $queryGetEvents = new QueryEventsRequest($this->auth);
         return $queryGetEvents->execute($id, $type);
     }
 
     public function getSeries($id = null, $type = null)
     {
-        $queryGetSeries = new QuerySeries($this->auth);
+        $queryGetSeries = new QuerySeriesRequest($this->auth);
         return $queryGetSeries->execute($id, $type);
     }
 
     public function getStories($id = null, $type = null)
     {
-        $queryGetStories = new QueryStories($this->auth);
+        $queryGetStories = new QueryStoriesRequest($this->auth);
         return $queryGetStories->execute($id, $type);
     }
 }
