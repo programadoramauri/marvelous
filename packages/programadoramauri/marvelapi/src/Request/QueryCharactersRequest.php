@@ -1,9 +1,22 @@
 <?php
 
-namespace Programadoramauri\Marvelapi\Models\Request;
+namespace Programadoramauri\Marvelapi\Request;
 
 class QueryCharactersRequest extends AbstractRequest
 {
+
+    protected $filters = [
+        'name' => 'string',
+        'nameStartsWith' => 'string',
+        'modifiedSince' => 'date',
+        'comics' => 'int',
+        'series' => 'int',
+        'events' => 'int',
+        'stories' => 'int',
+        'orderBy' => ['name', 'modified'],
+        'limit' => 'int',
+        'offset' => 'int'
+    ];
 
     public function __construct($auth)
     {

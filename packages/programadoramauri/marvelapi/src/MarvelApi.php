@@ -3,7 +3,8 @@
 namespace Programadoramauri\Marvelapi;
 
 use Carbon\Carbon;
-use Programadoramauri\Marvelapi\Models\Request\QueryCharactersRequest;
+use Programadoramauri\Marvelapi\Request\QueryCharactersRequest;
+use Programadoramauri\Marvelapi\Request\QueryComicsRequest;
 
 class MarvelApi
 {
@@ -36,6 +37,9 @@ class MarvelApi
     public function getCharacters($id = null, $type = null)
     {
         $queryGetCharacters = new QueryCharactersRequest($this->auth);
+        $queryGetCharacters->setFilter([
+            'name' => 'Spiderman'
+        ]);
         return $queryGetCharacters->execute($id, $type);
     }
 

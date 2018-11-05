@@ -1,9 +1,61 @@
 <?php
 
-namespace Programadoramauri\Marvelapi\Models\Request;
+namespace Programadoramauri\Marvelapi\Request;
 
 class QueryComicsRequest extends AbstractRequest
 {
+
+    protected $filters = [
+        'format' => [
+            'comic',
+            'magazine',
+            'trade paperback',
+            'hardcover',
+            'digest',
+            'graphic novel',
+            'digital comic',
+            'infinite comic',
+        ],
+        'formatType' => [
+            'comic',
+            'collection',
+        ],
+        'noVariants' => 'boolean',
+        'dateDescriptor' => [
+            'lastWeek',
+            'thisWeek',
+            'nextWeek',
+            'thisMonth',
+        ],
+        'dateRange' => 'dateRange',
+        'title' => 'string',
+        'titleStartsWith' => 'string',
+        'startYear' => 'int',
+        'issueNumber' => 'int',
+        'diamondCode' => 'string',
+        'digitalId' => 'int',
+        'upc' => 'string',
+        'isbn' => 'string',
+        'ean' => 'string',
+        'issn' => 'srting',
+        'hasDigitalIssue' => 'boolean',
+        'modifiedSince' => 'date',
+        'creators' => 'int',
+        'series' => 'int',
+        'events' => 'int',
+        'stories' => 'int',
+        'sharedAppearences' => 'int',
+        'collaborators' => 'int',
+        'orderBy' => [
+            'focDate',
+            'onsaleDate',
+            'title',
+            'issueNumber',
+            'modified',
+        ],
+        'limit' => 'int',
+        'offset' => 'int'
+    ];
 
     public function __construct($auth)
     {

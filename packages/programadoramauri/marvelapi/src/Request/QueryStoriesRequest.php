@@ -1,6 +1,6 @@
 <?php
 
-namespace Programadoramauri\Marvelapi\Models\Request;
+namespace Programadoramauri\Marvelapi\Request;
 
 class QueryStoriesRequest extends AbstractRequest
 {
