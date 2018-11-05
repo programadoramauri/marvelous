@@ -5,6 +5,20 @@ namespace Programadoramauri\Marvelapi\Request;
 class QueryEventsRequest extends AbstractRequest
 {
 
+    protected $filters = [
+        'name' => 'string',
+        'nameStartsWith' => 'string',
+        'modifiedSince' => 'date',
+        'creators' => 'int',
+        'characters' => 'int',
+        'series' => 'int',
+        'comics' => 'int',
+        'stories' => 'int',
+        'orderBy' => ['name', 'startDate', 'modified'],
+        'limit' => 'int',
+        'offset' => 'int'
+    ];
+
     public function __construct($auth)
     {
         parent::__construct($auth);

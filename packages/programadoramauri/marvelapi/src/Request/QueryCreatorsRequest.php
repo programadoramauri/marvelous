@@ -5,6 +5,29 @@ namespace Programadoramauri\Marvelapi\Request;
 class QueryCreatorsRequest extends AbstractRequest
 {
 
+    protected $filters = [
+        'firstName' => 'string',
+        'middleName' => 'string',
+        'lastName' => 'string',
+        'suffix' => 'string',
+        'nameStartsWith' => 'string',
+        'middleNameStartsWith' => 'string',
+        'lastNameStartsWith' => 'string',
+        'modifiedSince' => 'date',
+        'comics' => 'int',
+        'series' => 'int',
+        'stories' => 'int',
+        'orderBy' => [
+            'lastName',
+            'fisrtName',
+            'middleName',
+            'suffix',
+            'modified'
+        ],
+        'limit' => 'int',
+        'offset' => 'int'
+    ];
+
     public function __construct($auth)
     {
         parent::__construct($auth);
