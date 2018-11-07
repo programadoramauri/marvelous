@@ -7,13 +7,13 @@ class QueryStoriesRequest extends AbstractRequest
 
     protected $filters = [
         'modifiedSince' => 'date',
-        'series' => 'int',
-        'events' => 'int',
-        'creators' => 'int',
-        'characters' => 'int',
-        'orderBy' => ['id', 'modified'],
-        'limit' => 'int',
-        'offset' => 'int'
+        'series' => 'not_regex:/[A-z.;]/i',
+        'events' => 'not_regex:/[A-z.;]/i',
+        'creators' => 'not_regex:/[A-z.;]/i',
+        'characters' => 'not_regex:/[A-z.;]/i',
+        'orderBy' => 'in:id,modified,-id,-modified',
+        'limit' => 'integer',
+        'offset' => 'integer'
     ];
 
     public function __construct($auth)

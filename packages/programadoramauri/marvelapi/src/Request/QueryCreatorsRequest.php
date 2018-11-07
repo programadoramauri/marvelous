@@ -14,18 +14,12 @@ class QueryCreatorsRequest extends AbstractRequest
         'middleNameStartsWith' => 'string',
         'lastNameStartsWith' => 'string',
         'modifiedSince' => 'date',
-        'comics' => 'int',
-        'series' => 'int',
-        'stories' => 'int',
-        'orderBy' => [
-            'lastName',
-            'fisrtName',
-            'middleName',
-            'suffix',
-            'modified'
-        ],
-        'limit' => 'int',
-        'offset' => 'int'
+        'comics' => 'not_regex:/[A-z.;]/i',
+        'series' => 'not_regex:/[A-z.;]/i',
+        'stories' => 'not_regex:/[A-z.;]/i',
+        'orderBy' => 'in:lastName,fisrtName,middleName,suffix,modified,-lastName,-fisrtName,-middleName,-suffix,-modified',
+        'limit' => 'integer',
+        'offset' => 'integer'
     ];
 
     public function __construct($auth)

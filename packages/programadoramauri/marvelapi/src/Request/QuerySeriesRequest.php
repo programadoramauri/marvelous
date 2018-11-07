@@ -8,26 +8,17 @@ class QuerySeriesRequest extends AbstractRequest
     protected $filter = [
         'title' => 'string',
         'titleStartsWith' => 'string',
-        'startYear' => 'int',
+        'startYear' => 'integer',
         'modifiedSince' => 'date',
-        'comics' => 'int',
-        'stories' => 'int',
-        'events' => 'int',
-        'creators' => 'int',
-        'characters' => 'int',
-        'seriesType' => [
-            'collection',
-            'one shot',
-            'trade paperback',
-            'hardCover'
-        ],
-        'orderBy' => [
-            'title',
-            'modified',
-            'startYear'
-        ],
-        'limit' => 'int',
-        'offset' => 'int'
+        'comics' => 'not_regex:/[A-z.;]/i',
+        'stories' => 'not_regex:/[A-z.;]/i',
+        'events' => 'not_regex:/[A-z.;]/i',
+        'creators' => 'not_regex:/[A-z.;]/i',
+        'characters' => 'not_regex:/[A-z.;]/i',
+        'seriesType' => 'in:collection,one shot,trade paperback,hardCover',
+        'orderBy' => 'in:title,modified,startYear,-title,-modified,-startYear',
+        'limit' => 'integer',
+        'offset' => 'integer'
     ];
 
     public function __construct($auth)

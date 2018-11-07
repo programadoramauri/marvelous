@@ -6,27 +6,10 @@ class QueryComicsRequest extends AbstractRequest
 {
 
     protected $filters = [
-        'format' => [
-            'comic',
-            'magazine',
-            'trade paperback',
-            'hardcover',
-            'digest',
-            'graphic novel',
-            'digital comic',
-            'infinite comic',
-        ],
-        'formatType' => [
-            'comic',
-            'collection',
-        ],
+        'format' => 'in:comic,magazine,trade paperback,hardcover,digest,graphic novel,digital comic,infinite comic',
+        'formatType' => 'in:comic,collection',
         'noVariants' => 'boolean',
-        'dateDescriptor' => [
-            'lastWeek',
-            'thisWeek',
-            'nextWeek',
-            'thisMonth',
-        ],
+        'dateDescriptor' => 'in:lastWeek,thisWeek,nextWeek,thisMonth',
         'dateRange' => 'dateRange',
         'title' => 'string',
         'titleStartsWith' => 'string',

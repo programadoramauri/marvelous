@@ -9,14 +9,14 @@ class QueryEventsRequest extends AbstractRequest
         'name' => 'string',
         'nameStartsWith' => 'string',
         'modifiedSince' => 'date',
-        'creators' => 'int',
-        'characters' => 'int',
-        'series' => 'int',
-        'comics' => 'int',
-        'stories' => 'int',
-        'orderBy' => ['name', 'startDate', 'modified'],
-        'limit' => 'int',
-        'offset' => 'int'
+        'creators' => 'not_regex:/[A-z.;]/i',
+        'characters' => 'not_regex:/[A-z.;]/i',
+        'series' => 'not_regex:/[A-z.;]/i',
+        'comics' => 'not_regex:/[A-z.;]/i',
+        'stories' => 'not_regex:/[A-z.;]/i',
+        'orderBy' => 'in:name,startDate,modified,-name,-startDate,-modified',
+        'limit' => 'integer',
+        'offset' => 'integer'
     ];
 
     public function __construct($auth)
