@@ -4,7 +4,7 @@ namespace Programadoramauri\Marvelapi;
 
 use Illuminate\Support\ServiceProvider;
 
-class MarvelapiServiceProvider extends ServiceProvider
+class MarvelApiServiceProvider extends ServiceProvider
 {
 
     protected $defer = false;

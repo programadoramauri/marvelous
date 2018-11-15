@@ -160,7 +160,7 @@ return [
         Marvelous\Providers\EventServiceProvider::class,
         Marvelous\Providers\RouteServiceProvider::class,
 
-        Programadoramauri\Marvelapi\MarvelapiServiceProvider::class,
+        Programadoramauri\Marvelapi\MarvelApiServiceProvider::class,
 
     ],
 
