@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 
 class MarvelapiServiceProvider extends ServiceProvider
 {
+
+    protected $defer = false;
     /**
      * Bootstrap services.
      *
@@ -24,5 +26,10 @@ class MarvelapiServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    public function provides()
+    {
+        return array();
     }
 }
